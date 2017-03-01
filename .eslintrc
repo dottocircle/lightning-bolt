@@ -1,0 +1,16 @@
+rules:
+  comma-dangle: [2 ,'never']
+  'id-length': [2, {exceptions: ['_','$']}]
+  strict: [2, 'global']
+  quotes: [2, 'single']
+  no-console: 0
+extends: 'airbnb/legacy'
+ecmaFeatures:
+  arrowFunctions: true
+  generators: true
+  blockBindings: true
+env:
+  node: true
+  mocha: true
+  es6: true
+  jasmine: true

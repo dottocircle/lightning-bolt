@@ -1,0 +1,26 @@
+{
+  "name": "lightning-bolt",
+  "version": "1.0.0",
+  "description": "API Automation Test Framework using Node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkhan004/lightning-bolt.git"
+  },
+  "keywords": [
+    "API",
+    "Automation",
+    "Test",
+    "Framework",
+    "Node"
+  ],
+  "author": "Shakil Khan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mkhan004/lightning-bolt/issues"
+  },
+  "homepage": "https://github.com/mkhan004/lightning-bolt#readme"
+}
