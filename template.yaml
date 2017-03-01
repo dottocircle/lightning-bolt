@@ -1,0 +1,47 @@
+---
+-
+  id: testId
+  # single request dependency
+  dependsOn: otherTestId
+  # multiple request dependency
+  dependsOn:
+    - 1 # testId
+    - 2
+    - 3
+  path: /api/path/{{1.some.node.value}}
+  method: GET
+  query:
+    param1: value
+    param2: value
+  # another way to define query parameter
+  query: param1=value&param2=value
+  headers:
+    key1: value
+    key2: '{{2.some.node.value}}'
+  profile: fileName or yaml
+  body: filePath or yaml
+  # single after plugin
+  afterPlugin: printJwt
+  # multiple after plugins
+  afterPlugin:
+    - printJwt
+    - printResponse
+  # environment based custom validation
+  # can be configured at any level of `validate` block
+  # we should consider qa direct api as default
+  # if validation is applicable for all `gateway` env then just
+  # use `gateway.node: expected value`.
+  # if validation is only applicable for `gateway-qa` env then just
+  # use `gateway-qa.node: expected value`.
+  validate:
+    statusCode: 200
+    # custom validation for `gateway`
+    gateway.statusCode: 401
+    # custom validation for `gateway-qa`
+    gateway-qa.statusCode: 403
+    headers:
+      key: value
+    jsonContains: handlebars string, filepath or just yaml (positive validation)
+    jsonNotContains: handlebars string, filepath or just yaml (negative validation)
+    jsonSchema: only js filepath for now
+
