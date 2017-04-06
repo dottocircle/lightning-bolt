@@ -4,7 +4,11 @@
   "description": "API Automation Test Framework using Node js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "./node_modules/.bin/eslint . && ./node_modules/.bin/jscs ."
+  },
+  "bin": {
+    "lightning-bolt": "./lib/run-spec.js",
+    "bolt-writer": "./lib/testDataHandler.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +26,29 @@
   "bugs": {
     "url": "https://github.com/mkhan004/lightning-bolt/issues"
   },
-  "homepage": "https://github.com/mkhan004/lightning-bolt#readme"
+  "homepage": "https://github.com/mkhan004/lightning-bolt#readme",
+  "dependencies": {
+    "aws-sdk": "^2.7.11",
+    "csv-parse": "^1.1.7",
+    "expect": "^1.20.2",
+    "extfs": "0.0.7",
+    "frisby": "^0.8.5",
+    "fs-promise": "^0.5.0",
+    "handlebars": "^4.0.6",
+    "jasmine-node": "^1.14.5",
+    "js-yaml": "^3.7.0",
+    "jscs": "^3.0.7",
+    "jsonwebtoken": "^5.4.1",
+    "lodash": "^3.10.1",
+    "mkdirp": "^0.5.1",
+    "path": "^0.12.7",
+    "querystring": "^0.2.0",
+    "traverse": "^0.6.6",
+    "zpad": "^0.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^0.1.0",
+    "jscs": "^3.0.3"
+  }
 }
